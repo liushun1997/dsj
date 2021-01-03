@@ -111,13 +111,14 @@ $(function () {
       })
       .toBlob(function (blob) {
         fd.append('cover_img', blob)
+        fd.append('Id',obj.id)
         PostNewArticles(fd)
       })
   })
   function PostNewArticles(fd) {
     $.ajax({
       method: 'POST',
-      url: '/my/article/add',
+      url: '/my/article/edit',
       data: fd,
       contentType: false,
       processData: false,
